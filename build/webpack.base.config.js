@@ -22,7 +22,7 @@ module.exports={
            	  	  	less:'vue-style-loader!css-loader!less-loader'
            	  	  },
            	  	  postLoaders:{
-           	  	  	htmo:'babel-loader'
+           	  	  	html:'babel-loader'
            	  	  }
            	  }
            },
@@ -41,7 +41,7 @@ module.exports={
            },
            {
            	   test:/\.less$/,
-           	   user:[
+           	   use:[
                    'style-loader',
                    'css-loader',
                    'less-loader'
@@ -52,7 +52,7 @@ module.exports={
            	   loader:'url-loader?limit=8192'
            },
            {
-           	   test：/\.(html|tpl)$/,
+           	   test:/\.(html|tpl)$/,
            	   loader:'html-loader'
            }
 		]
