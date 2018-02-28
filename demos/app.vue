@@ -1,3 +1,6 @@
+<style>
+    @import '../src/style/index'
+</style>
 <template>
      <div id='test'>
          <router-view></router-view>
