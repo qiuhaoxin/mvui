@@ -12,22 +12,22 @@
      const prefixCls="mvui-btn";
      export default{
         name:'Button',
-        components:['Icon'],
+        components:{Icon},
         props:{
             buttonType:{
                 default:'button',
                 validator(value){
-                   reutrn Utility.isIn(value,["button","submit","reset"])
+                   return Utility.isIn(value,["button","submit","reset"]);
                 }
             },
             type:{
                validator (value){
-                   return Utitlity.isIn(value,['primary','ghost','dashed'])
+                   return Utility.isIn(value,['primary','ghost','dashed'])
                }
             },
             shape:{
                validator (value){
-                  return Utitlity.isIn(value,['circle','circle-outline'])
+                  return Utility.isIn(value,['circle','circle-outline'])
                }
             },
             size:{
@@ -36,7 +36,7 @@
                 }
             },
             loading:Boolean,
-            disabled:Boolean;
+            disabled:Boolean,
             icon:String,
             long:{
                type:Boolean,
@@ -64,7 +64,7 @@
                 ]
             }
         },
-        methods{
+        methods:{
            handleClick(event){
 
            }
