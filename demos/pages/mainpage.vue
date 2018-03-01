@@ -1,5 +1,10 @@
 <template>
-   <div>test</div>
+   <ul>
+      <li>
+      <router-link to="/button">Button</router-link>
+      
+      </li>
+    </ul>
 </template>
 <script>
      export default{
@@ -13,3 +18,6 @@
         }
      }
 </script>
+<style scoped>
+    
+</style>

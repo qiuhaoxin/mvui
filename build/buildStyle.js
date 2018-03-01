@@ -5,26 +5,24 @@ const gulp=require('gulp');
 const gulpCleanCss=require('gulp-clean-css');
 const gulpLess=require('gulp-less');
 const gulpRename=require('gulp-rename');
-cosnt gulpAutoPrefix=require('gulp-autoprefixer');
+const gulpAutoPrefix=require('gulp-autoprefixer');//gulp-autoprefixer
 
-gulp.tash('css',function(){
+gulp.task('css',function(){
 	gulp.src('../src/styles/index.less')
-	.pipe(less())
+	.pipe(gulpLess())
 	.pipe(gulpAutoPrefix({
-		browser:['last 2versions','ie>8']
+		browsers:["last 2 versions","ie > 8"]
 	}))
-	.pipe(gulpCleanCss())
-	.pipe(gulpRename('mvui.min.css'))
+	.pipe(gulpCleanCss())//压缩css
+	.pipe(gulpRename('mvui.min.css'))//重命名CSS文件
 	.pipe(gulp.dest('../dist/styles'));
-})
+});
 
 
 //拷贝字体文件
 gulp.task('fonts',function(){
-	gulp.src('../src/styles/commons/i')
+	gulp.src('../src/styles/commons/iconfont/fonts/*.*')
+	.pipe(gulp.dest('../dist/styles/fonts'))
 })
 
-
-
-
-gulp.task('default',['css','fonts']);
+gulp.task('default',['css',"fonts"]);

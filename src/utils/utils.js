@@ -1,6 +1,9 @@
 class Utility{
 
 }
-Utility.prototype.oneOf=function(value,obj){
-    if(typeof obj==)
+Utility.prototype.isIn=function(value,obj){
+    for(let key in obj){
+    	if(value==obj[key])return true;
+    }
+    return false;
 }

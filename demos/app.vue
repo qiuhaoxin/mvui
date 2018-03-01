@@ -1,5 +1,5 @@
 <style>
-    @import '../src/style/index'
+    @import '../src/styles/index.less'
 </style>
 <template>
      <div id='test'>

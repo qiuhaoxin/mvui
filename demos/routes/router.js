@@ -1,6 +1,7 @@
 import App from '../app'
 
-const test = r => require.ensure([],()=>r(require("../pages/test")),"test")
+const mainpage = r => require.ensure([],()=>r(require("../pages/mainpage")),"mainpage");
+const button = r => require.ensure([],()=>r(require("../pages/button")),"button");
 
 
 export default [{
@@ -12,7 +13,10 @@ export default [{
       	  redirect:'/mainpage'
       },{
       	path:'/mainpage',
-      	component:test
+      	component:mainpage
+      },{
+         path:'/button',
+         component:button
       }
    ]
 }]
