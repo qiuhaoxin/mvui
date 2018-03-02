@@ -32,20 +32,12 @@ module.exports={
            	   exclude:/node_modules/
            },
            {
-           	  test:/\.css$/,
-           	  use:[
-                  'style-loader',
-                  'css-loader',
-                  'autoprefixer-loader'
-           	  ]
+               test:/\.less$/,
+               loader:'style-loader!css-loader!less-loader'
            },
            {
-           	   test:/\.less$/,
-           	   use:[
-                   'style-loader',
-                   'css-loader',
-                   'less-loader'
-           	   ]
+           	  test:/\.css$/,
+              loader:'style-loader!css-loader'
            },
            {
            	   test:/\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
@@ -58,7 +50,7 @@ module.exports={
 		]
 	},
 	resolve:{
-		extensions:['.js','.vue'],
+		extensions:['.js','.vue','.less','.css'],
 		alias:{
 			'vue':'vue/dist/vue.esm.js',
 			'@':resolve('src')

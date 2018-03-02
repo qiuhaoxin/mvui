@@ -1,5 +1,5 @@
-<style>
-    @import '../src/styles/index.less'
+<style lang="less">
+    @import '../src/styles/index.less';
 </style>
 <template>
      <div id='test'>

@@ -6,6 +6,7 @@ const path=require('path');
 const webpack=require('webpack');
 const merge=require('webpack-merge');
 const baseConfig=require('./webpack.base.config.js');
+console.log("baseConfig is "+JSON.stringify(baseConfig));
 const HtmlWebpackPlugin=require('html-webpack-plugin');
 
 module.exports=merge(baseConfig,{
@@ -30,6 +31,11 @@ module.exports=merge(baseConfig,{
 			inject:true,
 			filename:path.join(__dirname,"../demos/dist/index.html"),
 			template:path.join(__dirname,"../demos/index.html")
+		}),
+		new HtmlWebpackPlugin({
+			inject:true,
+			filename:path.join(__dirname,"../demos/dist/login.html"),
+			template:path.join(__dirname,"../demos/login.html")
 		})
 	]
 

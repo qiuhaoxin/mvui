@@ -37,7 +37,9 @@
     "gulp-rename": "^1.2.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^2.30.1",
+    "less": "^3.0.1",
     "less-loader": "^4.0.6",
+    "postcss-loader": "^2.1.1",
     "style-loader": "^0.20.2",
     "url-loader": "^0.6.2",
     "vue-loader": "^14.1.1",
@@ -52,19 +54,17 @@
     "vue": "^2.5.13",
     "vue-router": "^3.0.1"
   },
-  "engines":{
-    "node":">=6.0.0",
-    "npm":">=3.0.0"
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=3.0.0"
   },
-  "browserlist":[
-      "last 3 Chrome version",
-      "last 3 FireFox version",
-      "Safari >= 10",
-      "Explorer >= 11",
-      "Edge >= 12",
-      "iOS >=10",
-      "Android >= 6"
+  "browserlist": [
+    "last 3 Chrome version",
+    "last 3 FireFox version",
+    "Safari >= 10",
+    "Explorer >= 11",
+    "Edge >= 12",
+    "iOS >=10",
+    "Android >= 6"
   ]
-
-  
 }

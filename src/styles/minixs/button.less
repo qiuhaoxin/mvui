@@ -1,13 +1,30 @@
-.button-size(@padding;@font-size;@border-radius){
-	padding:@padding;
-	font-size:@font-size;
-	border-radius:@border-radius;
+
+.button-size(@padding; @font-size; @border-radius) {
+    padding: @padding;
+    font-size: @font-size;
+    border-radius: @border-radius;
 }
-.button-color(@color;@background;@border){
-	color:@color;
-	background-color:@background;
-	border-color:@border;
+
+.button-color(@color; @background; @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+    // a inside Button which only work in Chrome
+    // http://stackoverflow.com/a/17253457
+    > a:only-child {
+        color: currentColor;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: transparent;
+        }
+    }
 }
+
 .button-variant(@color;@background;@border){
 	.button-color(@color;@background;@border);
 	&:hover{
@@ -31,10 +48,10 @@
     }
 
 }
-.btn(){
+.btn() {
 	display:inline-block;
 	margin-bottom:0;
-	font-weight:@font-weight;
+	font-weight:@btn-font-weight;
 	text-align:center;
 	vertical-align:middle;
 	cursor:point;
@@ -55,12 +72,8 @@
 	&:focus{
 	    outline:none;
 	}
-
-
-
-
 }
-.btn-default(){
+.btn-default() {
 	.button-variant(@btn-default-color;@btn-default-bg;@btn-default-border,@btn-default-border);
 
 	&:hover{
@@ -72,4 +85,5 @@
 	}
 	.active-btn-color(@primary-color);
 }
+
 
