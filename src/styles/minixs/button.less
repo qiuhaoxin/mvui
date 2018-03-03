@@ -32,7 +32,7 @@
 	}
 	&:active,
 	&.active{
-	   .button-color(shade(@color,5%);shade(@backgroundcolor,5%);shade(@border,5%));
+	   .button-color(shade(@color,5%);shade(@background,5%);shade(@border,5%));
 	}
 
     &.disabled,
@@ -73,8 +73,9 @@
 	    outline:none;
 	}
 }
+//Default 
 .btn-default() {
-	.button-variant(@btn-default-color;@btn-default-bg;@btn-default-border,@btn-default-border);
+	.button-variant(@btn-default-color;@btn-default-bg;@btn-default-border);
 
 	&:hover{
 	    .button-color(tint(@primary-color, 20%); white; tint(@primary-color, 20%));
@@ -84,6 +85,23 @@
 	    .button-color(shade(@primary-color,5%);white;shade(@primary-color,5%));
 	}
 	.active-btn-color(@primary-color);
+}
+//Primary  
+.btn-primary(){
+	.button-variant(@btn-primary-color;@btn-primary-bg;@primary-color);
+
+	&:hover,
+	&:active,
+	&.active{
+	    color:@btn-primary-color;
+	}
+	.active-btn-color(@primary-color);
+}
+
+.active-btn-color(@color){
+	&:focus{
+	   box-shadow:0 0 0 2px fade(@color,20%);
+	}
 }
 
 
