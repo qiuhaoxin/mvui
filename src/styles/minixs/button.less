@@ -105,13 +105,13 @@
 	   .button-color(tint(@primary-color,20%);@btn-ghost-bg;tint(@primary-color,20%));
 	}
 	&:active,
-	$.active{
+	&.active{
 	   .button-color(shade(@primary-color,5%);@btn-ghost-bg;shade(@primary-color,5%));
 	}
 	.active-btn-color(@primary-color);
 }
 //Dashed
-.btn-dashed(){
+.btn-dashed() {
 	.button-variant(@btn-ghost-color,@btn-ghost-bg,@btn-ghost-border);
 	border-style:dashed;
 	&:hover{
@@ -119,13 +119,13 @@
 	}
 	&.active,
 	&:active{
-	   .button-color(shade(@primary-color,5%),@btn-ghost-bg;shade(@primary-color,20%));
+	   .button-color(shade(@primary-color,5%);@btn-ghost-bg;shade(@primary-color,20%));
 	}
 	.active-btn-color(@primary-color);
 }
 
-.btn-text(){
-	.button-variant(@btn-ghost-color,@btn-ghost-bg,trasparent);
+.btn-text() {
+	.button-variant(@btn-ghost-color,@btn-ghost-bg,transparent);
 	&.disabled,
 	&[disabled],
 	fieldset[disabled] & {
@@ -134,11 +134,11 @@
 	   &:focus,
 	   &:active,
 	   &.active{
-	       .button-color(@btn-disable-color;@btn-ghost-bg;transparent);
+	       .button-color(@btn-disable-color,@btn-ghost-bg,transparent);
 	   }
 	}
 	&:hover{
-	    .button-color(tint(@primary-color,20%);@btn-ghost-bg;transparent);
+	    .button-color(tint(@primary-color,20%),@btn-ghost-bg,transparent);
 	}
 	&:active,
 	&.active{
@@ -149,6 +149,31 @@
 .active-btn-color(@color){
 	&:focus{
 	   box-shadow:0 0 0 2px fade(@color,20%);
+	}
+}
+
+//Circle for Icon
+
+.btn-circle(@btnClassName:mvui-btn){
+	border-radius:@btn-circle-size;
+	&.@{btnClassName}-large{
+	    border-radius:@btn-circle-size-large;
+	}
+	&.@{btnClassName}-size{
+	    border-radius:@btn-circle-size-small;
+	}
+	&.@{btnClassName}-icon-only{
+	    .square(@btn-circle-size);
+	    .button-size(0,@font-size-base + 2;50%);
+
+	    &.@{btnClassName}-large{
+	       .square(@btn-circle-size-large);
+	       .button-size(0,@btn-font-size-large + 2;50%);
+	    }
+	    &.@{btnClassName}-small{
+	       .square(@btn-circle-size-small);
+	       .button-size(0;@font-size-base;50%)
+	    }
 	}
 }
 
