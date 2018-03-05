@@ -7,6 +7,7 @@
          <Button type="dashed">Dashed</Button>
 
          <Button type="primary" shape="circle">Circle</Button>
+         <Button type='primary' icon='ios-search'></Button>
      </div>
 </template>
 <scipt>

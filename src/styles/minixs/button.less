@@ -1,4 +1,7 @@
-
+.square(@w;@h:@w){
+	width:@w;
+	height:@h;
+}
 .button-size(@padding; @font-size; @border-radius) {
     padding: @padding;
     font-size: @font-size;
@@ -164,11 +167,11 @@
 	}
 	&.@{btnClassName}-icon-only{
 	    .square(@btn-circle-size);
-	    .button-size(0,@font-size-base + 2;50%);
+	    .button-size(0;@font-size-base + 2;50%);
 
 	    &.@{btnClassName}-large{
 	       .square(@btn-circle-size-large);
-	       .button-size(0,@btn-font-size-large + 2;50%);
+	       .button-size(0;@btn-font-size-large + 2;50%);
 	    }
 	    &.@{btnClassName}-small{
 	       .square(@btn-circle-size-small);

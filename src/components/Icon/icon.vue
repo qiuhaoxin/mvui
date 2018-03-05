@@ -6,7 +6,9 @@
      export default{
          name:"ICON",
          data(){
-
+            return{
+            
+            }
          },
          props:{
             type:String,
