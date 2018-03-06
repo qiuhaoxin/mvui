@@ -32,9 +32,28 @@
                       [`${prefixCls}-order-${this.order}`]:this.order,
                       [`${prefixCls}-offset-${this.offset}`]:this.offset,
                       [`${prefixCls}-push-${this.push}`]:this.push,
-                      [`${prefix}`]
+                      [`${prefixCls}-pull-${this.pull}`]:this.pull,
+                      [`${this.className}`]:!!this.className
                   }
-               ]
+               ];
+               ['xs','sm','md','lg','xl','xxl'].forEach(size=>{
+                   if(typeof this[size]=='number'){
+                      classList.push(`${prefixCls}-span${size}-${this[size]}`);
+                   }else if(typeof this[size]=='object'){
+                       let props=this[size];
+                       Object.keys(props).forEach(prop=>{
+                           classList.push(
+                              prop!=='span'
+                              ? `${prefixCls}-${size}-${prop}-${props[prop]}`
+                              : `${prefixCls}-span-${size}-${props[prop]}`
+                           )
+                       });
+                   }
+               });
+               return classList;
+           },
+           styles(){
+               
            }
        }
     }
