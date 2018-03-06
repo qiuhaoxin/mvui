@@ -58,7 +58,8 @@
                       [`${prefixCls}-long`]:this.long,
                       [`${prefixCls}-${this.size}`]:!!this.size,
                       [`${prefixCls}-${this.shape}`]:!!this.shape,
-                      [`${prefixCls}-loading`]:this.loading!=null && this.loading
+                      [`${prefixCls}-loading`]:this.loading!=null && this.loading,
+                      [`${prefixCls}-icon-only`]:!this.showSlot && (!!this.icon || this.loading)
 
                   }
                 ]
